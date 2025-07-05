@@ -18,6 +18,11 @@ public partial class Plugin
 
             if (this.config.SelfWildcardFormat.Value.Contains(arg))
             {
+                if (!args.Player.RealPlayer)
+                {
+                    continue;
+                }
+                
                 args.Parameters[i] = args.Player.Name;
                 continue;
             }
